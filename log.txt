@@ -1,2 +1,3 @@
+012543b Task 1.2: Update log with initial commits
 69d1dbe Task 1.1: Fix all checkstyle errors
 40654a0 Initial commit
