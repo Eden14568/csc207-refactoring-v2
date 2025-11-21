@@ -1,3 +1,4 @@
+72fbef6 Task 2.4: Replace temp variables with queries
 83b68c0 Task 2.3: Extracted format method usd
 b15d2e7 Task 2.2: Extracted getVolumeCredits method
 8e0b032 Task 2.1: Extracted getAmount and getPlay methods

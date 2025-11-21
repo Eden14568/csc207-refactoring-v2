@@ -39,8 +39,8 @@ public class StatementPrinter {
                     usd(getAmount(p)), p.getAudience()));
         }
 
-        result.append(String.format("Amount owed is %s%n", usd(totalAmount())));
-        result.append(String.format("You earned %s credits%n", totalVolumeCredits()));
+        result.append(String.format("Amount owed is %s%n", usd(getTotalAmount())));
+        result.append(String.format("You earned %s credits%n", getTotalVolumeCredits()));
         return result.toString();
     }
 
@@ -83,11 +83,11 @@ public class StatementPrinter {
     }
 
     private String usd(long aNumber) {
-        NumberFormat frmt = NumberFormat.getCurrencyInstance(Locale.US);
+        final NumberFormat frmt = NumberFormat.getCurrencyInstance(Locale.US);
         return frmt.format(aNumber / Constants.PERCENT_FACTOR);
     }
 
-    private int totalAmount() {
+    private int getTotalAmount() {
         int result = 0;
         for (Performance p : invoice.getPerformances()) {
             result += getAmount(p);
@@ -95,7 +95,7 @@ public class StatementPrinter {
         return result;
     }
 
-    private int totalVolumeCredits() {
+    private int getTotalVolumeCredits() {
         int result = 0;
         for (Performance p : invoice.getPerformances()) {
             result += getVolumeCredits(p);
